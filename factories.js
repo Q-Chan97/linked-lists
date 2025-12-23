@@ -24,4 +24,17 @@ class LinkedList {
         }
         this.size++; // Increase list size
     }
+
+    prepend(value) {
+        let newNode = new Node(value);
+
+        if (this.size === 0) { // If list size is 0, operates the same way as append method
+            this.head = newNode; 
+            this.tail = newNode;
+        } else {
+            newNode.nextNode = this.head; // Connects old head 
+            this.head = newNode; // Add new node as head
+        }
+        this.size++; // Increase list size
+    }
 }
