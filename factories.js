@@ -104,4 +104,17 @@ export class LinkedList {
         }
         return false;
     }
+
+    find(value) {
+        let current = this.head;
+        let counter = 0; // "Index" counter
+
+        while (current !== null) {
+            if (current.value === value) return counter; // Return index number if found
+
+            current = current.nextNode; // Advance to next node
+            counter++; // Update counter
+        }
+        return null; // Returns null if nothing found
+    }
 }
