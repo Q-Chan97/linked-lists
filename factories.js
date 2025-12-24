@@ -12,6 +12,21 @@ class LinkedList {
         this.size = 0;
     }
 
+    toString() {
+        let current = this.head;
+        let string = "";
+
+        while (current !== null) {
+            string+=`(${current.value}) -> `;
+            current = current.nextNode;
+        }
+
+        if (current === null) {
+            string += "null";
+        }
+        return string;
+    }
+
     append(value) {
         let newNode = new Node(value);
 
