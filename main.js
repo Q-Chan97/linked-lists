@@ -1,4 +1,4 @@
-import { LinkedList } from "./factories";
+import { LinkedList } from "./factories.js";
 
 let list = new LinkedList();
 
