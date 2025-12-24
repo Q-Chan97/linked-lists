@@ -66,4 +66,31 @@ export class LinkedList {
 
         return current; // Returns data
     }
+
+    pop() {
+        let current = this.head;
+
+        if (this.size === 0) { // Return null for empty list
+            return null;
+        }
+
+        if (this.size === 1) { // Removes node in a one node list
+            let removedNode = this.head; // Captures head node before removal
+            this.head = null;
+            this.tail = null;
+            this.size--; // Reduce size of list to 0
+            return removedNode; // Returns removed node
+        } else {
+            while (current.nextNode !== this.tail) {
+                current = current.nextNode;
+            } 
+
+            let removedNode = this.tail; // Captures last node in list
+            this.tail = current; // New tail is current node
+            this.tail.nextNode = null; // Set tail's next node to be null;
+            this.size--; // Reduce size of list by 1
+
+            return removedNode; // Returns removed node
+        }
+    }
 }
