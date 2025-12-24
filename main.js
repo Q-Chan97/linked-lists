@@ -23,3 +23,5 @@ console.log(popList.toString()); // Should return Burger King -> Wendy's -> null
 
 console.log(list.contains("Dog")); // Should return true
 console.log(list.contains("Kangaroo")); // Should return false
+
+console.log(list.find("Fish"));  // Should return 4
