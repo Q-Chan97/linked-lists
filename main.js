@@ -7,4 +7,7 @@ list.append("Cat");
 list.append("Bird");
 list.append("Fish");
 
-console.log(list);
+list.prepend("Hamster"); // Should be first in list
+
+console.log(list.toString());
+console.log(list.at(1)); // Should be Dog
