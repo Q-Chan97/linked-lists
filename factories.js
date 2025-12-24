@@ -93,4 +93,15 @@ export class LinkedList {
             return removedNode; // Returns removed node
         }
     }
+
+    contains(value) {
+        let current = this.head; // Start at head
+
+        while (current !== null) {
+            if (current.value === value) return true; // Returns true if the value of current node matches
+
+            current = current.nextNode; // Advance through list
+        }
+        return false;
+    }
 }
