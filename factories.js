@@ -37,4 +37,18 @@ class LinkedList {
         }
         this.size++; // Increase list size
     }
+
+    at(index) {
+        if (index < 0 || index >= this.size) return null; // Guard in case index size doesn't exist
+
+        let counter = 0;
+        let current = this.head; // Starts counting at the head node
+
+        while (counter < index) { // Only goes up to index passed in
+            current = current.nextNode; // Advances through list
+            counter++; // Increase counter up to index
+        }
+
+        return current; // Returns data
+    }
 }
