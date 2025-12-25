@@ -25,3 +25,6 @@ console.log(list.contains("Dog")); // Should return true
 console.log(list.contains("Kangaroo")); // Should return false
 
 console.log(list.find("Fish"));  // Should return 4
+
+list.insertAt(1, "Jayhawk") // Jayhawk should be the second list element now
+console.log(list.toString());
