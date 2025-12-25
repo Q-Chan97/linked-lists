@@ -117,4 +117,29 @@ export class LinkedList {
         }
         return null; // Returns null if nothing found
     }
+
+    insertAt(index, value) {
+        if (index < 0 || index > this.size) return null; // Similar guard as in at(index) method; won't insert anything
+        if (index === 0) {
+            this.prepend(value); // If the index is the first, prepends the node
+            return; // Stops method
+        }
+        if (index === this.size) {
+            this.append(value); // If the index is the tail, appends the node
+            return; // Stops method
+        }
+
+        let current = this.head;
+        let counter = 0;
+
+        while (counter < index - 1) { // Traverses list to target the "index" before the one we want inserted
+            current = current.nextNode;
+            counter++;
+        }
+
+        let newNode = new Node(value); // Creates new node
+        newNode.nextNode = current.nextNode; // New node takes the place of current node
+        current.nextNode = newNode; // Links old node to new node. The next node of current (the one before our index) is our new node
+        this.size++; // Increase the size of the list
+    }
 }
