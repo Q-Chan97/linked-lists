@@ -28,3 +28,6 @@ console.log(list.find("Fish"));  // Should return 4
 
 list.insertAt(1, "Jayhawk") // Jayhawk should be the second list element now
 console.log(list.toString());
+
+list.remove(3) // Should remove Cat
+console.log(list.toString())
