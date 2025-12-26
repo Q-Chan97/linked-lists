@@ -142,4 +142,30 @@ export class LinkedList {
         current.nextNode = newNode; // Links old node to new node. The next node of current (the one before our index) is our new node
         this.size++; // Increase the size of the list
     }
+
+    remove(index) {
+        if (index < 0 || index >= this.size) return null;
+
+        if (index === 0) { // If the head is targeted
+            let removedNode = this.head; // Captures head
+            this.head = this.head.nextNode; // Sets the node after head to be the new head node
+            this.size--; // Reduce size of list
+            if (this.size === 0) this.tail = null; // Tail points to null, not removed node
+            return removedNode; // Return removed head node
+        }
+
+        let current = this.head;
+        let counter = 0;
+        
+        while (counter < index - 1) {
+            current = current.nextNode;
+            counter ++;
+        }
+
+        let removedNode = current.nextNode; // Captures node to remove
+        current.nextNode = removedNode.nextNode; // Sets the node after removed node to be the next node
+        if (index === this.size - 1) this.tail = current; // Tail points to new tail node
+        this.size--; // Reduce size of list
+        return removedNode; // Return removed node
+    }
 }
